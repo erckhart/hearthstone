@@ -1,5 +1,2 @@
-include ':presentation'
-include ':domain'
-include ':data'
+include ':app', ':data', ':presentation', ':domain'
 rootProject.name='HearthStone'
-include ':app'

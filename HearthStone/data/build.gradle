@@ -2,9 +2,8 @@ apply plugin: 'java-library'
 apply plugin: 'kotlin'
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-}
 
-sourceCompatibility = "1.7"
-targetCompatibility = "1.7"
+    implementation dataDependencies.retrofit
+    implementation dataDependencies.rxJava
+    implementation commonDependencies.kotlin
+}
