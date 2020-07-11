@@ -4,9 +4,12 @@ ext {
     junit_version = "1.1.1"
     glide_version = "4.11.0"
     koin_version = "2.1.6"
+    retrofit_version = "2.9.0"
+    rx_version = "3.0.4"
 
     commonDependencies = [
             kotlin : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            koin: "org.koin:koin-core:$koin_version",
             koinScope : "org.koin:koin-androidx-scope:$koin_version",
             koinViewModel : "org.koin:koin-androidx-viewmodel:$koin_version"
     ]
@@ -21,9 +24,12 @@ ext {
     ]
 
     dataDependencies = [
-            retrofit : "com.squareup.retrofit2:retrofit:2.9.0",
-            rxJava :  "io.reactivex.rxjava3:rxjava:3.0.4",
-            rxAndroid : 'io.reactivex.rxjava3:rxandroid:3.0.0'
+            gson: "com.google.code.gson:gson:2.8.6",
+            retrofit : "com.squareup.retrofit2:retrofit:$retrofit_version",
+            gsonConverter: "com.squareup.retrofit2:converter-gson:$retrofit_version",
+            retrofitRxJava: "com.squareup.retrofit2:adapter-rxjava:$retrofit_version",
+            rxJava :  "io.reactivex.rxjava3:rxjava:$rx_version",
+            rxAndroid : "io.reactivex.rxjava3:rxandroid:$rx_version"
     ]
 
     testDependencies = [
