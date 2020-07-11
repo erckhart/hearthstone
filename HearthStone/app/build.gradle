@@ -44,8 +44,8 @@ android {
         animationsDisabled = true
     }
 
-    dataBinding {
-        enabled true
+    buildFeatures{
+        dataBinding = true
     }
 
 }
