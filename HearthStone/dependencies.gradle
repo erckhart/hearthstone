@@ -26,6 +26,7 @@ ext {
     dataDependencies = [
             gson: "com.google.code.gson:gson:2.8.6",
             retrofit : "com.squareup.retrofit2:retrofit:$retrofit_version",
+            retrofitLogging: "com.squareup.okhttp3:logging-interceptor:4.8.0",
             gsonConverter: "com.squareup.retrofit2:converter-gson:$retrofit_version",
             retrofitRxJava: "com.squareup.retrofit2:adapter-rxjava:$retrofit_version",
             rxJava :  "io.reactivex.rxjava3:rxjava:$rx_version",

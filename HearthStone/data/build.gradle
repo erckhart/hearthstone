@@ -6,6 +6,7 @@ dependencies {
     implementation commonDependencies.koin
     implementation dataDependencies.gson
     implementation dataDependencies.retrofit
+    implementation dataDependencies.retrofitLogging
     implementation dataDependencies.gsonConverter
     implementation dataDependencies.retrofitRxJava
     implementation dataDependencies.rxJava
