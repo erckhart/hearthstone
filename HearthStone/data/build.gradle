@@ -11,4 +11,6 @@ dependencies {
     implementation dataDependencies.retrofitRxJava
     implementation dataDependencies.rxJava
     implementation commonDependencies.kotlin
+
+    testImplementation testDependencies.jUnit
 }
