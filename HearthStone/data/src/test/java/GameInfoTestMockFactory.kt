@@ -1,7 +1,7 @@
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 
-object GameInfoTestFactory {
+object GameInfoTestMockFactory {
 
     fun mockServerResponse(key: String, values: List<String>): JsonObject {
         val valuesJson = values.let {

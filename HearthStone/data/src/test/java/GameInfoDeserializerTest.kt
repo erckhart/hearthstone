@@ -1,4 +1,4 @@
-import GameInfoTestFactory.mockServerResponse
+import GameInfoTestMockFactory.mockServerResponse
 import com.voidx.data.network.deserializer.GameInfoDeserializer
 import org.junit.Assert.assertEquals
 import org.junit.Before
