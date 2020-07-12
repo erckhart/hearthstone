@@ -1,6 +1,12 @@
+import com.google.gson.GsonBuilder
 import com.voidx.data.DataSettings
+import com.voidx.data.model.GameInfo
 import com.voidx.data.network.Api
 import com.voidx.data.network.AuthorizationInterceptor
+import com.voidx.data.network.deserializer.GameInfoDeserializer
+import com.voidx.data.repository.InfoDataSource
+import com.voidx.data.repository.impl.InfoRepository
+import com.voidx.data.repository.impl.remote.InfoRemoteDataSource
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
@@ -11,8 +17,9 @@ import java.util.concurrent.TimeUnit
 
 val dataModule = module {
 
-    factory {
-//        InfoRe
+    factory<InfoDataSource> {
+        val remote = InfoRemoteDataSource(get())
+        InfoRepository(remote)
     }
 
     single { createOkHttpClient(get()) }
@@ -41,10 +48,15 @@ fun createOkHttpClient(settings: DataSettings): OkHttpClient {
 }
 
 inline fun <reified T> createWebService(okHttpClient: OkHttpClient, settings: DataSettings): T {
+
+    val gson = GsonBuilder()
+        .registerTypeAdapter(GameInfo::class.java, GameInfoDeserializer())
+        .create()
+
     val retrofit = Retrofit.Builder()
         .baseUrl(settings.serverUrl)
         .client(okHttpClient)
-        .addConverterFactory(GsonConverterFactory.create())
+        .addConverterFactory(GsonConverterFactory.create(gson))
         .addCallAdapterFactory(RxJavaCallAdapterFactory.create()).build()
     return retrofit.create(T::class.java)
 }
