@@ -5,4 +5,8 @@ dependencies {
     implementation project(":data")
 
     implementation commonDependencies.kotlin
+    implementation dataDependencies.rxJava
+
+    testImplementation testDependencies.jUnit
+    testImplementation testDependencies.mockk
 }
