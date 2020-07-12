@@ -4,9 +4,12 @@ apply plugin: 'kotlin'
 dependencies {
     implementation project(":data")
 
+    implementation commonDependencies.koin
+
     implementation commonDependencies.kotlin
     implementation dataDependencies.rxJava
 
     testImplementation testDependencies.jUnit
     testImplementation testDependencies.mockk
+    testImplementation dataDependencies.gson
 }
