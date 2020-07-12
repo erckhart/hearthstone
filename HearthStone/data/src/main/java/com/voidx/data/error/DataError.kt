@@ -6,7 +6,11 @@ sealed class DataError {
 
         object NoApiKeyDataError: ApiDataError()
 
-        object NoResultsFoundDataError: DataError()
+        object NoResultsFoundDataError: ApiDataError()
+
+        object ServerMessageDataError: ApiDataError() {
+            lateinit var message: String
+        }
 
     }
 
