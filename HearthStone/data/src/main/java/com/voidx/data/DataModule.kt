@@ -1,5 +1,7 @@
 import com.google.gson.GsonBuilder
 import com.voidx.data.DataSettings
+import com.voidx.data.error.DataErrorHandler
+import com.voidx.data.error.impl.DataErrorHandlerImpl
 import com.voidx.data.model.GameInfo
 import com.voidx.data.network.Api
 import com.voidx.data.network.AuthorizationInterceptor
@@ -18,8 +20,12 @@ import java.util.concurrent.TimeUnit
 val dataModule = module {
 
     factory<InfoDataSource> {
-        val remote = InfoRemoteDataSource(get())
+        val remote = InfoRemoteDataSource(get(), get())
         InfoRepository(remote)
+    }
+
+    factory<DataErrorHandler> {
+        DataErrorHandlerImpl()
     }
 
     single { createOkHttpClient(get()) }
