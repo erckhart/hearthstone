@@ -4,13 +4,14 @@ apply plugin: 'kotlin'
 dependencies {
 
     implementation commonDependencies.koin
+    implementation commonDependencies.kotlin
+
     implementation dataDependencies.gson
     implementation dataDependencies.retrofit
     implementation dataDependencies.retrofitLogging
     implementation dataDependencies.gsonConverter
     implementation dataDependencies.retrofitRxJava
     implementation dataDependencies.rxJava
-    implementation commonDependencies.kotlin
 
     testImplementation testDependencies.jUnit
 }
