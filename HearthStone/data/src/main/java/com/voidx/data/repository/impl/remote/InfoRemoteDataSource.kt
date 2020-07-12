@@ -8,7 +8,7 @@ import io.reactivex.rxjava3.core.Single
 
 internal class InfoRemoteDataSource(private val api: Api): InfoDataSource {
 
-    override fun getGameInfo(): Single<List<GameInfo>> =
+    override fun getGameInfo(): Single<GameInfo> =
         api.listGameInfos()
 
     override fun getCardsBy(category: String, filter: String): Single<List<Card>> =

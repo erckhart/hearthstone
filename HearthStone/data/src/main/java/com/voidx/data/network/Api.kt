@@ -9,7 +9,7 @@ import retrofit2.http.Path
 internal interface Api {
 
     @GET("info")
-    fun listGameInfos(): Single<List<GameInfo>>
+    fun listGameInfos(): Single<GameInfo>
 
     @GET("cards/{category}/{filter}")
     fun listCardsBy(

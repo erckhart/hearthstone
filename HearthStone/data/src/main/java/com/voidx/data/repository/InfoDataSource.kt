@@ -6,7 +6,7 @@ import io.reactivex.rxjava3.core.Single
 
 interface InfoDataSource {
 
-    fun getGameInfo(): Single<List<GameInfo>>
+    fun getGameInfo(): Single<GameInfo>
 
     fun getCardsBy(category: String, filter: String): Single<List<Card>>
 
