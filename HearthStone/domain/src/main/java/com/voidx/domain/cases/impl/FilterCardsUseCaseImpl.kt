@@ -6,7 +6,7 @@ import com.voidx.data.repository.InfoDataSource
 import com.voidx.domain.cases.FilterCardsUseCase
 import io.reactivex.rxjava3.core.Single
 
-class FilterCardsUseCaseImpl(private val repository: InfoDataSource) : FilterCardsUseCase {
+internal class FilterCardsUseCaseImpl(private val repository: InfoDataSource) : FilterCardsUseCase {
 
     override fun getCardsBy(category: String, keyword: String): Single<DataResult<List<Card>>> =
         repository.getCardsBy(category.toLowerCase(), keyword)
