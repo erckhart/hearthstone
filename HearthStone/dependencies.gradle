@@ -6,6 +6,7 @@ ext {
     koin_version = "2.1.6"
     retrofit_version = "2.9.0"
     rx_version = "3.0.4"
+    rx_android_version = "3.0.0"
 
     commonDependencies = [
             kotlin : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
@@ -30,14 +31,15 @@ ext {
             gsonConverter: "com.squareup.retrofit2:converter-gson:$retrofit_version",
             retrofitRxJava: "com.squareup.retrofit2:adapter-rxjava:$retrofit_version",
             rxJava :  "io.reactivex.rxjava3:rxjava:$rx_version",
-            rxAndroid : "io.reactivex.rxjava3:rxandroid:$rx_version"
+            rxAndroid : "io.reactivex.rxjava3:rxandroid:$rx_android_version"
     ]
 
     testDependencies = [
             jUnit : "androidx.test.ext:junit:$junit_version",
             espresso : 'androidx.test.espresso:espresso-core:3.2.0',
             mockWebServer :"com.squareup.okhttp3:mockwebserver:4.8.0",
-            mockk : "io.mockk:mockk:1.10.0"
+            mockk : "io.mockk:mockk:1.10.0",
+            arch: "androidx.arch.core:core-testing:2.1.0"
     ]
 
 }

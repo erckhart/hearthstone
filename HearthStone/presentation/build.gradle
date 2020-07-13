@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion compile_sdk_version
@@ -18,9 +19,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures{
+        dataBinding = true
     }
 }
 
@@ -30,6 +36,12 @@ dependencies {
 
     implementation commonDependencies.kotlin
     implementation viewDependencies.androidx
+    implementation commonDependencies.koin
+    implementation commonDependencies.koinViewModel
+    implementation dataDependencies.rxJava
+    implementation dataDependencies.rxAndroid
 
     testImplementation testDependencies.jUnit
+    testImplementation testDependencies.mockk
+    testImplementation testDependencies.arch
 }
