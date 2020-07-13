@@ -7,7 +7,7 @@ import com.voidx.data.model.GameOption
 import io.reactivex.rxjava3.core.Single
 import util.TestUtil
 
-object ListGameInfoTestMockFactory {
+internal object ListGameInfoTestMockFactory {
 
     fun mockGameInfo(): Single<DataResult<GameInfo>> {
 

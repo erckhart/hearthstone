@@ -15,7 +15,7 @@ import org.junit.Test
 import util.RxImmediateSchedulerRule
 import util.isNotNull
 
-class ListGameInfoUseCaseTest {
+internal class ListGameInfoUseCaseTest {
 
     @Rule
     @JvmField
