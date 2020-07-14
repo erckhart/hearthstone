@@ -8,21 +8,30 @@ import com.voidx.domain.cases.ListGameInfoUseCase
 import com.voidx.presentation.dto.GameOptionDTO
 import com.voidx.presentation.mapper.Mapper
 import com.voidx.presentation.state.State
+import com.voidx.presentation.util.disposedBy
 import io.reactivex.rxjava3.core.Scheduler
+import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 
 class ListGameInfoViewModel(
     private val listUseCase: ListGameInfoUseCase,
     private val mainThreadScheduler: Scheduler,
     private val mapper: Mapper<GameOption, GameOptionDTO>
-) : ViewModel() {
+) : ViewModel(), LifecycleObserver {
+
+    private val disposables = CompositeDisposable()
 
     private val state: MutableLiveData<State> = MutableLiveData()
+    private val data: MutableLiveData<List<GameOptionDTO>> = MutableLiveData()
 
     fun state(): LiveData<State> = state
 
+    fun data(): LiveData<List<GameOptionDTO>> = data
+
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun load() {
+        state.postValue(State.Loading)
+
         listUseCase
             .getGameInfo()
             .observeOn(mainThreadScheduler)
@@ -33,22 +42,28 @@ class ListGameInfoViewModel(
                     is DataResult.OnError -> handleOnError(result.error)
                 }
             }
-            .dispose()
+            .disposedBy(disposables)
     }
 
     private fun handleOnError(error: DataError) {
         state.postValue(State.Error(error))
     }
 
-    private fun handleOnSuccess(data: List<GameOption>) {
-        if (data.isEmpty()) {
+    private fun handleOnSuccess(items: List<GameOption>) {
+        if (items.isEmpty()) {
             state.postValue(State.Empty)
         } else {
-            val options = data.map {
+            val options = items.map {
                 mapper.map(it)
             }
-            state.postValue(State.Success(options))
+            data.postValue(options)
+            state.postValue(State.Success)
         }
+    }
+
+    override fun onCleared() {
+        disposables.dispose()
+        super.onCleared()
     }
 
 }

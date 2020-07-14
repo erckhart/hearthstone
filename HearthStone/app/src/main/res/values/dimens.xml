@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="no_size">0dp</dimen>
+
+    <dimen name="list_game_option_title_font_size">40sp</dimen>
+    <dimen name="list_game_option_margin">36dp</dimen>
+    <dimen name="list_game_option_title_margin">92dp</dimen>
+
+    <dimen name="game_option_width">144dp</dimen>
+    <dimen name="game_option_height">104dp</dimen>
+    <dimen name="game_option_title_padding_start">24dp</dimen>
+    <dimen name="game_option_title_margin_bottom">16dp</dimen>
+    <dimen name="game_option_font_size">16sp</dimen>
+
+    <dimen name="game_info_title_padding">36dp</dimen>
+    <dimen name="game_info_font_size">18sp</dimen>
+    <dimen name="game_info_top_margin">10dp</dimen>
+
+    <dimen name="default_card_elevation">6dp</dimen>
+    <dimen name="default_padding">8dp</dimen>
+    <dimen name="default_card_corner">16dp</dimen>
+    <dimen name="default_card_margin">16dp</dimen>
+
+</resources>

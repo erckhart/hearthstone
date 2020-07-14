@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="gameOption"
+            type="com.voidx.presentation.dto.GameOptionItemDTO" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/game_option_width"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@{gameOption.color}"
+        app:cardCornerRadius="@dimen/default_card_corner"
+        app:cardElevation="@dimen/default_card_elevation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/game_option_height">
+
+            <TextView
+                android:layout_width="@dimen/no_size"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/game_option_title_margin_bottom"
+                android:fontFamily="@font/avenir_roman"
+                android:paddingStart="@dimen/game_option_title_padding_start"
+                android:paddingEnd="@dimen/no_size"
+                android:text="@{gameOption.title}"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Druid" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="gameOption"
+            type="com.voidx.presentation.dto.GameOptionDTO" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:id="@+id/game_info_title"
+            android:layout_width="@dimen/no_size"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/avenir_roman"
+            android:paddingStart="@dimen/game_info_title_padding"
+            android:paddingEnd="@dimen/no_size"
+            android:text="@{gameOption.title}"
+            android:textSize="@dimen/game_info_font_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Classes" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingEnd="0dp"
+            app:data="@{gameOption.items}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/game_info_title"
+            tools:itemCount="3"
+            tools:listitem="@layout/game_option_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

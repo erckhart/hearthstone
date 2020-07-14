@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.facebook.shimmer.ShimmerFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/shimmer_view_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    app:shimmer_auto_start="true"
+    app:shimmer_duration="1500">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/list_game_option_title_margin">
+
+        <include
+            android:id="@+id/first"
+            layout="@layout/game_option_item"
+            android:layout_width="@dimen/game_option_width"
+            android:layout_height="@dimen/game_option_height"
+            android:layout_marginStart="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/second"
+            layout="@layout/game_option_item"
+            android:layout_width="@dimen/game_option_width"
+            android:layout_height="@dimen/game_option_height"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@+id/first"
+            app:layout_constraintTop_toTopOf="@+id/first" />
+
+        <include
+            android:id="@+id/third"
+            layout="@layout/game_option_item"
+            android:layout_width="@dimen/game_option_width"
+            android:layout_height="@dimen/game_option_height"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@+id/second"
+            app:layout_constraintTop_toTopOf="@+id/second" />
+
+        <include
+            android:id="@+id/fourth"
+            layout="@layout/game_option_item"
+            android:layout_width="@dimen/game_option_width"
+            android:layout_height="@dimen/game_option_height"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="@+id/first"
+            app:layout_constraintTop_toBottomOf="@+id/first" />
+
+        <include
+            android:id="@+id/fifth"
+            layout="@layout/game_option_item"
+            android:layout_width="@dimen/game_option_width"
+            android:layout_height="@dimen/game_option_height"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@+id/fourth"
+            app:layout_constraintTop_toTopOf="@+id/fourth" />
+
+        <include
+            android:id="@+id/sixth"
+            layout="@layout/game_option_item"
+            android:layout_width="@dimen/game_option_width"
+            android:layout_height="@dimen/game_option_height"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@+id/fifth"
+            app:layout_constraintTop_toTopOf="@+id/fifth" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.facebook.shimmer.ShimmerFrameLayout>
