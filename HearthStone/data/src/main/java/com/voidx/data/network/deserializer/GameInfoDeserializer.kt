@@ -16,7 +16,13 @@ class GameInfoDeserializer: JsonDeserializer<GameInfo> {
         context: JsonDeserializationContext?
     ): GameInfo {
 
-        val options = (jsonElement as? JsonObject)?.entrySet()?.map {
+        val json = jsonElement?.asJsonObject?.let {
+            it.remove("patch")
+            it.remove("locales")
+            it
+        }
+
+        val options = json?.entrySet()?.map {
             val values = it.value.asJsonArray.map { jsonElement -> jsonElement.asString }
             GameOption(it.key.capitalize(), values)
         } ?: emptyList()
