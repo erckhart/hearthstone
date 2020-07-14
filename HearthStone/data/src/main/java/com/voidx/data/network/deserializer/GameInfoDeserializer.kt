@@ -19,6 +19,8 @@ class GameInfoDeserializer: JsonDeserializer<GameInfo> {
         val json = jsonElement?.asJsonObject?.let {
             it.remove("patch")
             it.remove("locales")
+            it.remove("wild")
+            it.remove("standard")
             it
         }
 
