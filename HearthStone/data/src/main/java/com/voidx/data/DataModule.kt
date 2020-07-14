@@ -13,7 +13,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
@@ -30,7 +30,16 @@ val dataModule = module {
 
     single { createOkHttpClient(get()) }
 
-    single { createWebService<Api>(get(), get()) }
+    single<Api> { createWebService(get(), get()) }
+
+    single {
+        DataSettings(
+            getProperty("server_url"),
+            getProperty("server_host"),
+            getProperty("server_api_key"),
+            true
+        )
+    }
 
 }
 
@@ -40,7 +49,7 @@ fun createOkHttpClient(settings: DataSettings): OkHttpClient {
         .connectTimeout(60L, TimeUnit.SECONDS)
         .readTimeout(60L, TimeUnit.SECONDS)
 
-    if (settings.isDebug) {
+    if(settings.isDebug) {
         val httpLoggingInterceptor = HttpLoggingInterceptor()
         httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
 
@@ -59,10 +68,12 @@ inline fun <reified T> createWebService(okHttpClient: OkHttpClient, settings: Da
         .registerTypeAdapter(GameInfo::class.java, GameInfoDeserializer())
         .create()
 
-    val retrofit = Retrofit.Builder()
+    return Retrofit.Builder()
         .baseUrl(settings.serverUrl)
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create(gson))
-        .addCallAdapterFactory(RxJavaCallAdapterFactory.create()).build()
-    return retrofit.create(T::class.java)
+        .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+        .build()
+        .create(T::class.java)
+
 }
