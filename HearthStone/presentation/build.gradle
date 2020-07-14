@@ -39,7 +39,8 @@ dependencies {
     implementation commonDependencies.koin
     implementation commonDependencies.koinViewModel
     implementation dataDependencies.rxJava
-    implementation dataDependencies.rxAndroid
+
+    testImplementation dataDependencies.rxAndroid
 
     testImplementation testDependencies.jUnit
     testImplementation testDependencies.mockk
