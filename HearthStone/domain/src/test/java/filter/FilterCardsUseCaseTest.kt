@@ -19,7 +19,7 @@ import org.junit.Rule
 import org.junit.Test
 import util.RxImmediateSchedulerRule
 
-class FilterCardsUseCaseTest {
+internal class FilterCardsUseCaseTest {
 
     @Rule
     @JvmField

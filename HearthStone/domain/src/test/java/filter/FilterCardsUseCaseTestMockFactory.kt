@@ -6,7 +6,7 @@ import com.voidx.data.model.Card
 import io.reactivex.rxjava3.core.Single
 import util.TestUtil
 
-object FilterCardsUseCaseTestMockFactory {
+internal object FilterCardsUseCaseTestMockFactory {
 
     fun mockSuccessFilter(): Single<DataResult<List<Card>>> {
         val list: List<Card> = TestUtil.getObject("filter_cards_200.json")
