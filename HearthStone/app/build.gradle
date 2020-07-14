@@ -53,14 +53,25 @@ android {
 dependencies {
     implementation project(":presentation")
 
-    implementation commonDependencies.kotlin
+    implementation commonDependencies.koin
+    implementation commonDependencies.koinScope
+    implementation commonDependencies.koinViewModel
+
     implementation viewDependencies.appCompat
     implementation viewDependencies.androidx
     implementation viewDependencies.constraintLayout
+    implementation viewDependencies.fragment
+    implementation viewDependencies.navigation
+    implementation viewDependencies.navigationFragment
+    implementation viewDependencies.recycler
+    implementation viewDependencies.lifecycle
     implementation viewDependencies.shimmer
     implementation viewDependencies.glide
     kapt viewDependencies.glideCompiler
 
+    implementation dataDependencies.rxAndroid
+
     androidTestImplementation testDependencies.jUnit
     androidTestImplementation testDependencies.espresso
+    androidTestImplementation testDependencies.mockWebServer
 }
