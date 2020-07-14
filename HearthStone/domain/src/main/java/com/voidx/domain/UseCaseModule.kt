@@ -4,7 +4,7 @@ import com.voidx.domain.cases.impl.FilterCardsUseCaseImpl
 import com.voidx.domain.cases.impl.ListGameInfoUseCaseImpl
 import org.koin.dsl.module
 
-val useCaseModule = module {
+val module = module {
 
     factory<ListGameInfoUseCase> {
         ListGameInfoUseCaseImpl(get())
@@ -15,3 +15,5 @@ val useCaseModule = module {
     }
 
 }
+
+val useCaseModule = listOf(dataModule, module)
