@@ -32,15 +32,6 @@ val dataModule = module {
 
     single<Api> { createWebService(get(), get()) }
 
-    single {
-        DataSettings(
-            getProperty("server_url"),
-            getProperty("server_host"),
-            getProperty("server_api_key"),
-            true
-        )
-    }
-
 }
 
 fun createOkHttpClient(settings: DataSettings): OkHttpClient {

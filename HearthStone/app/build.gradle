@@ -23,12 +23,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 
             buildConfigField "String", "SERVER_URL", "\"https://omgvamp-hearthstone-v1.p.rapidapi.com/\""
+            buildConfigField "String", "SERVER_HOST", "\"omgvamp-hearthstone-v1.p.rapidapi.com\""
+            buildConfigField "String", "API_KEY", "\"3e48676002msh4269adfcf7f3d8ep177656jsn86974b041324\""
         }
         debug {
             buildConfigField "String", "SERVER_URL", "\"https://omgvamp-hearthstone-v1.p.rapidapi.com/\""
+            buildConfigField "String", "SERVER_HOST", "\"omgvamp-hearthstone-v1.p.rapidapi.com\""
+            buildConfigField "String", "API_KEY", "\"3e48676002msh4269adfcf7f3d8ep177656jsn86974b041324\""
         }
         mock {
             buildConfigField "String", "SERVER_URL", "\"http://localhost:8080/\""
+            buildConfigField "String", "SERVER_HOST", "\"localhost\""
+            buildConfigField "String", "API_KEY", "\"MOCK_API_KEY\""
         }
     }
 

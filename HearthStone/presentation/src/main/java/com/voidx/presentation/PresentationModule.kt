@@ -1,5 +1,7 @@
 package com.voidx.presentation
 
+import com.voidx.data.DataSettings
+import com.voidx.presentation.dto.ConfigurationDTO
 import com.voidx.presentation.filterResults.FilterResultsViewModel
 import com.voidx.presentation.filterResults.mapper.CardMapToResultDTO
 import com.voidx.presentation.list.ListGameInfoViewModel
@@ -16,6 +18,16 @@ val module = module {
 
     viewModel { (category: String, type: String) ->
         FilterResultsViewModel(category, type, get(), CardMapToResultDTO(), get())
+    }
+
+    single {
+        val configuration = get<ConfigurationDTO>()
+        DataSettings(
+            configuration.serverUrl,
+            configuration.serverHost,
+            configuration.apiKey,
+            configuration.isDebug
+        )
     }
 
 }
