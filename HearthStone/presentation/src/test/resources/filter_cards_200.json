@@ -1,0 +1,123 @@
+[
+  {
+    "cardId": "GAME_004",
+    "dbfId": "1740",
+    "name": "AFK",
+    "cardSet": "Basic",
+    "type": "Enchantment",
+    "text": "Your turns are shorter.",
+    "playerClass": "Neutral",
+    "locale": "enUS"
+  },
+  {
+    "cardId": "CS2_041e",
+    "dbfId": "1853",
+    "name": "Ancestral Infusion",
+    "cardSet": "Basic",
+    "type": "Enchantment",
+    "text": "Taunt.",
+    "playerClass": "Shaman",
+    "locale": "enUS",
+    "mechanics": [
+      {
+        "name": "Taunt"
+      }
+    ]
+  },
+  {
+    "cardId": "HERO_09",
+    "dbfId": "813",
+    "name": "Anduin Wrynn",
+    "cardSet": "Basic",
+    "type": "Hero",
+    "faction": "Neutral",
+    "rarity": "Free",
+    "health": 30,
+    "collectible": true,
+    "playerClass": "Priest",
+    "img": "http://media.services.zam.com/v1/media/byName/hs/cards/enus/HERO_09.png",
+    "imgGold": "http://media.services.zam.com/v1/media/byName/hs/cards/enus/animated/HERO_09_premium.gif",
+    "locale": "enUS"
+  },
+  {
+    "cardId": "EX1_399e",
+    "dbfId": "1621",
+    "name": "Berserking",
+    "cardSet": "Basic",
+    "type": "Enchantment",
+    "text": "This minion has increased Attack.",
+    "playerClass": "Neutral",
+    "locale": "enUS"
+  },
+  {
+    "cardId": "CS2_092e",
+    "dbfId": "803",
+    "name": "Blessing of Kings",
+    "cardSet": "Basic",
+    "type": "Enchantment",
+    "text": "+4/+4.",
+    "playerClass": "Paladin",
+    "locale": "enUS"
+  },
+  {
+    "cardId": "CS2_087e",
+    "dbfId": "603",
+    "name": "Blessing of Might",
+    "cardSet": "Basic",
+    "type": "Enchantment",
+    "faction": "Neutral",
+    "text": "+3 Attack.",
+    "playerClass": "Paladin",
+    "locale": "enUS"
+  },
+  {
+    "cardId": "CS2_046e",
+    "dbfId": "1096",
+    "name": "Bloodlust",
+    "cardSet": "Basic",
+    "type": "Enchantment",
+    "text": "+3 Attack this turn.",
+    "playerClass": "Shaman",
+    "locale": "enUS",
+    "mechanics": [
+      {
+        "name": "OneTurnEffect"
+      }
+    ]
+  },
+  {
+    "cardId": "BT_035e",
+    "dbfId": "57889",
+    "name": "Chaos Strike",
+    "cardSet": "Basic",
+    "type": "Enchantment",
+    "text": "+2 Attack this turn.",
+    "playerClass": "Demon Hunter",
+    "locale": "enUS",
+    "mechanics": [
+      {
+        "name": "OneTurnEffect"
+      }
+    ]
+  },
+  {
+    "cardId": "EX1_084e",
+    "dbfId": "706",
+    "name": "Charge",
+    "cardSet": "Basic",
+    "type": "Enchantment",
+    "text": "Warsong Commander is granting this minion +1 Attack.",
+    "playerClass": "Warrior",
+    "locale": "enUS"
+  },
+  {
+    "cardId": "DS1_178e",
+    "dbfId": "1712",
+    "name": "Charge",
+    "cardSet": "Basic",
+    "type": "Enchantment",
+    "text": "{0} grants <b>Charge</b>.",
+    "playerClass": "Hunter",
+    "locale": "enUS"
+  }
+]
