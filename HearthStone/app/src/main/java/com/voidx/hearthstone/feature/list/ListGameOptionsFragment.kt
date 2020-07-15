@@ -65,12 +65,12 @@ class ListGameOptionsFragment : Fragment() {
     }
 
     private fun showList() {
-        binding.content.visibility = VISIBLE
+        binding.list.visibility = VISIBLE
         binding.loading.visibility = GONE
     }
 
     private fun showLoading() {
-        binding.content.visibility = GONE
+        binding.list.visibility = GONE
         binding.loading.visibility = VISIBLE
     }
 }
