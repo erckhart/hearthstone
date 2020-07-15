@@ -31,6 +31,7 @@ android {
             buildConfigField "String", "SERVER_HOST", "\"omgvamp-hearthstone-v1.p.rapidapi.com\""
             buildConfigField "String", "API_KEY", "\"3e48676002msh4269adfcf7f3d8ep177656jsn86974b041324\""
         }
+        mock.initWith(buildTypes.debug)
         mock {
             buildConfigField "String", "SERVER_URL", "\"http://localhost:8080/\""
             buildConfigField "String", "SERVER_HOST", "\"localhost\""
@@ -47,6 +48,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    testBuildType "mock"
     testOptions {
         animationsDisabled = true
     }
@@ -78,7 +80,12 @@ dependencies {
 
     implementation dataDependencies.rxAndroid
 
+    mockImplementation testDependencies.fragmentTesting
     androidTestImplementation testDependencies.jUnit
+    androidTestImplementation testDependencies.androidxTestRules
+    androidTestImplementation testDependencies.androidxTestRunner
     androidTestImplementation testDependencies.espresso
+    androidTestImplementation testDependencies.espressoContrib
+    androidTestImplementation testDependencies.androidxNavigationTest
     androidTestImplementation testDependencies.mockWebServer
 }

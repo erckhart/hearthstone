@@ -7,10 +7,12 @@ ext {
     retrofit_version = "2.9.0"
     rx_version = "3.0.4"
     rx_android_version = "3.0.0"
-    nav_version = '2.2.2'
+    nav_version = '2.3.0'
     recylerview_version = '1.1.0'
     lifecycle_version = '2.2.0'
-    fragment_ktx_version = '1.2.5'
+    androix_test_version = '1.2.0'
+    espresso_version = '3.2.0'
+    fragment_version = "1.2.5"
 
     commonDependencies = [
             kotlin : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version",
@@ -26,7 +28,7 @@ ext {
             glide : "com.github.bumptech.glide:glide:$glide_version",
             glideCompiler : "com.github.bumptech.glide:compiler:$glide_version",
             shimmer : 'com.facebook.shimmer:shimmer:0.5.0',
-            fragment: "androidx.fragment:fragment-ktx:$fragment_ktx_version",
+            fragment: "androidx.fragment:fragment-ktx:$fragment_version",
             navigationFragment: "androidx.navigation:navigation-fragment-ktx:$nav_version",
             navigation: "androidx.navigation:navigation-ui:$nav_version",
             recycler: "androidx.recyclerview:recyclerview:$recylerview_version",
@@ -45,7 +47,12 @@ ext {
 
     testDependencies = [
             jUnit : "androidx.test.ext:junit:$junit_version",
-            espresso : 'androidx.test.espresso:espresso-core:3.2.0',
+            androidxTestRules: "androidx.test:rules:$androix_test_version",
+            androidxTestRunner: "androidx.test:runner:$androix_test_version",
+            espresso : "androidx.test.espresso:espresso-core:$espresso_version",
+            espressoContrib: "androidx.test.espresso:espresso-contrib:$espresso_version",
+            androidxNavigationTest: "androidx.navigation:navigation-testing:$nav_version",
+            fragmentTesting: "androidx.fragment:fragment-testing:$fragment_version",
             mockWebServer :"com.squareup.okhttp3:mockwebserver:4.8.0",
             mockk : "io.mockk:mockk:1.10.0",
             arch: "androidx.arch.core:core-testing:2.1.0"
