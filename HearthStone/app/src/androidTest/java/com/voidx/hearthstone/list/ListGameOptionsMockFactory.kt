@@ -16,11 +16,4 @@ sealed class ListGameOptionsMockFactory {
             }
         }
     }
-
-    companion object {
-
-        fun success() = createMockResponse(200, "info/game_info_200.json")
-
-    }
-
 }
