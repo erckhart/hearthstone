@@ -28,6 +28,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/category"
             android:layout_width="@dimen/no_size"
             android:layout_height="wrap_content"
             android:fontFamily="@font/avenir_roman"
