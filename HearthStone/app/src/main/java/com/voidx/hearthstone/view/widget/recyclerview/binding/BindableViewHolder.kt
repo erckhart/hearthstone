@@ -1,4 +1,4 @@
-package com.voidx.hearthstone.view.binding
+package com.voidx.hearthstone.view.widget.recyclerview.binding
 
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
