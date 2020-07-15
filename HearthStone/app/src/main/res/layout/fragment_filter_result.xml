@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.voidx.presentation.filterResults.FilterResultsViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/mercury"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="@dimen/default_button"
+            android:layout_height="@dimen/default_button"
+            android:layout_marginStart="@dimen/app_left_margin"
+            android:layout_marginTop="@dimen/app_top_margin"
+            android:background="@drawable/circle_steel_gray_shape"
+            android:src="@drawable/ic_chevron_left"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="@dimen/no_size"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/avenir_roman"
+            android:gravity="end"
+            android:paddingStart="@dimen/no_size"
+            android:paddingEnd="@dimen/app_right_margin"
+            android:text="@{viewModel.title()}"
+            android:textColor="@color/steel_gray"
+            android:textSize="@dimen/filter_result_title_font_size"
+            app:layout_constraintBottom_toBottomOf="@+id/back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/back"
+            app:layout_constraintTop_toTopOf="@+id/back"
+            tools:text="Races" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/no_size"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/default_card_margin"
+            app:data="@{viewModel.data()}"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/back"
+            app:spanCount="2"
+            tools:itemCount="4"
+            tools:listitem="@layout/filter_result_item" />
+
+        <include
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/no_size"
+            layout="@layout/loading_filter_results"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/back" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

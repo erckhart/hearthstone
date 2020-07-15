@@ -45,4 +45,5 @@ dependencies {
     testImplementation testDependencies.jUnit
     testImplementation testDependencies.mockk
     testImplementation testDependencies.arch
+    testImplementation dataDependencies.gson
 }

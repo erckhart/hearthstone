@@ -3,13 +3,15 @@
 
     <dimen name="no_size">0dp</dimen>
 
-    <dimen name="list_game_option_title_font_size">40sp</dimen>
-    <dimen name="list_game_option_margin">36dp</dimen>
-    <dimen name="list_game_option_title_margin">92dp</dimen>
+    <dimen name="app_top_margin">92dp</dimen>
+    <dimen name="app_left_margin">36dp</dimen>
+    <dimen name="app_right_margin">36dp</dimen>
+    <dimen name="app_padding">24dp</dimen>
+    <dimen name="app_item_width">144dp</dimen>
 
-    <dimen name="game_option_width">144dp</dimen>
+    <dimen name="list_game_option_title_font_size">40sp</dimen>
+
     <dimen name="game_option_height">104dp</dimen>
-    <dimen name="game_option_title_padding_start">24dp</dimen>
     <dimen name="game_option_title_margin_bottom">16dp</dimen>
     <dimen name="game_option_font_size">16sp</dimen>
 
@@ -21,5 +23,10 @@
     <dimen name="default_padding">8dp</dimen>
     <dimen name="default_card_corner">16dp</dimen>
     <dimen name="default_card_margin">16dp</dimen>
+
+    <dimen name="default_button">64dp</dimen>
+
+    <dimen name="filter_result_title_font_size">22sp</dimen>
+    <dimen name="filter_result_item_height">224sp</dimen>
 
 </resources>

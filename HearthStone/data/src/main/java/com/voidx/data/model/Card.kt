@@ -50,10 +50,10 @@ data class Card(
     val race: String,
 
     @SerializedName("img")
-    val img: String,
+    val img: String?,
 
     @SerializedName("imgGold")
-    val imgGold: String,
+    val imgGold: String?,
 
     @SerializedName("locale")
     val locale: String

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="result"
+            type="com.voidx.presentation.dto.ResultDTO" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/filter_result_item_height">
+
+        <ImageView
+            android:layout_width="@dimen/app_item_width"
+            android:layout_height="@dimen/no_size"
+            android:contentDescription="@{result.title}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:url="@{result.image}"
+            tools:src="@drawable/card_back" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
