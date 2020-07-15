@@ -13,9 +13,11 @@ object TestUtil {
         return Gson().fromJson(json, classType)
     }
 
-    fun <T> getObject(fileName: String): T {
+    inline fun <reified T> getObjects(fileName: String): List<T> {
         val json = getJson(fileName)
-        val type: Type = object : TypeToken<T>() {}.type
+        val type: Type =
+            TypeToken.getParameterized(List::class.java, T::class.java)
+                .type
         return Gson().fromJson(json, type)
     }
 

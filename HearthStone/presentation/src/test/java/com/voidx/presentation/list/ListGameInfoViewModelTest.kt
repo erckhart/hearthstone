@@ -8,6 +8,7 @@ import com.voidx.presentation.dto.GameOptionDTO
 import com.voidx.presentation.list.ListGameInfoViewModelTestMockFactory.mockEmptyGameOptions
 import com.voidx.presentation.list.ListGameInfoViewModelTestMockFactory.mockErrorNoApiKey
 import com.voidx.presentation.list.ListGameInfoViewModelTestMockFactory.mockGameOptions
+import com.voidx.presentation.list.mapper.GameOptionMapToGameOptionDto
 import com.voidx.presentation.mapper.Mapper
 import com.voidx.presentation.state.State
 import com.voidx.presentation.util.RxImmediateSchedulerRule
@@ -19,7 +20,6 @@ import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.mockito.ArgumentMatchers.any
 
 class ListGameInfoViewModelTest {
 
@@ -32,12 +32,13 @@ class ListGameInfoViewModelTest {
     val instantTaskExecutorRule = InstantTaskExecutorRule()
 
     private var useCase: ListGameInfoUseCase = mockk(relaxed = true)
-    private var mapper: Mapper<GameOption, GameOptionDTO> = mockk(relaxed = true)
 
+    private lateinit var mapper: Mapper<GameOption, GameOptionDTO>
     private lateinit var viewModel: ListGameInfoViewModel
 
     @Before
     fun setup() {
+        mapper = GameOptionMapToGameOptionDto()
         viewModel = ListGameInfoViewModel(useCase, AndroidSchedulers.mainThread(), mapper)
     }
 
@@ -50,7 +51,8 @@ class ListGameInfoViewModelTest {
 
         verify(exactly = 1) { useCase.getGameInfo() }
 
-        assertEquals(State.Success<Any>(), viewModel.state().value)
+        assertEquals(State.Success, viewModel.state().value)
+        assertEquals(10, viewModel.data().value?.size)
     }
 
     @Test

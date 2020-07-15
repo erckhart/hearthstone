@@ -19,7 +19,7 @@ class FilterResultsViewModel(
     private val mainThreadScheduler: Scheduler,
     private val mapper: Mapper<Card, ResultDTO>,
     private val useCase: FilterCardsUseCase
-): ViewModel(), LifecycleObserver {
+) : ViewModel(), LifecycleObserver {
 
     private val disposables = CompositeDisposable()
 
@@ -53,16 +53,18 @@ class FilterResultsViewModel(
     }
 
     private fun handleSuccess(data: List<Card>) {
-        if(data.isEmpty()) {
+        if (data.isEmpty()) {
             state.postValue(State.Empty)
-        } else {
-            val results = data.map {
-                mapper.map(it)
-            }
-
-            this.data.postValue(results)
-            state.postValue(State.Success)
+            return
         }
+
+        val results = data.map {
+            mapper.map(it)
+        }
+
+        this.data.postValue(results)
+        state.postValue(State.Success)
+
     }
 
     override fun onCleared() {

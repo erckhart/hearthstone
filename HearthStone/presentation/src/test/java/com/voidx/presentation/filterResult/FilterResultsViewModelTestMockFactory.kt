@@ -9,11 +9,11 @@ import io.reactivex.rxjava3.core.Single
 object FilterResultsViewModelTestMockFactory {
 
     fun mockSuccessFilter(): Single<DataResult<List<Card>>> {
-        val list: List<Card> = TestUtil.getObject("filter_cards_200.json")
+        val list: List<Card> = TestUtil.getObjects("filter_cards_200.json")
         return Single.just(DataResult.success(list))
     }
 
-    fun mockEmptyGameOptions(): Single<DataResult<List<Card>>> {
+    fun mockEmptyResults(): Single<DataResult<List<Card>>> {
         return Single.just(DataResult.success(emptyList()))
     }
 
