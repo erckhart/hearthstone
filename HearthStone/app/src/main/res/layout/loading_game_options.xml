@@ -4,19 +4,18 @@
     android:id="@+id/shimmer_view_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
     app:shimmer_auto_start="true"
     app:shimmer_duration="1500">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/list_game_option_title_margin">
+        android:layout_marginTop="@dimen/app_top_margin">
 
         <include
             android:id="@+id/first"
             layout="@layout/game_option_item"
-            android:layout_width="@dimen/game_option_width"
+            android:layout_width="@dimen/app_item_width"
             android:layout_height="@dimen/game_option_height"
             android:layout_marginStart="24dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +24,7 @@
         <include
             android:id="@+id/second"
             layout="@layout/game_option_item"
-            android:layout_width="@dimen/game_option_width"
+            android:layout_width="@dimen/app_item_width"
             android:layout_height="@dimen/game_option_height"
             android:layout_marginStart="16dp"
             app:layout_constraintStart_toEndOf="@+id/first"
@@ -34,7 +33,7 @@
         <include
             android:id="@+id/third"
             layout="@layout/game_option_item"
-            android:layout_width="@dimen/game_option_width"
+            android:layout_width="@dimen/app_item_width"
             android:layout_height="@dimen/game_option_height"
             android:layout_marginStart="16dp"
             app:layout_constraintStart_toEndOf="@+id/second"
@@ -43,7 +42,7 @@
         <include
             android:id="@+id/fourth"
             layout="@layout/game_option_item"
-            android:layout_width="@dimen/game_option_width"
+            android:layout_width="@dimen/app_item_width"
             android:layout_height="@dimen/game_option_height"
             android:layout_marginTop="24dp"
             app:layout_constraintStart_toStartOf="@+id/first"
@@ -52,7 +51,7 @@
         <include
             android:id="@+id/fifth"
             layout="@layout/game_option_item"
-            android:layout_width="@dimen/game_option_width"
+            android:layout_width="@dimen/app_item_width"
             android:layout_height="@dimen/game_option_height"
             android:layout_marginStart="16dp"
             app:layout_constraintStart_toEndOf="@+id/fourth"
@@ -61,7 +60,7 @@
         <include
             android:id="@+id/sixth"
             layout="@layout/game_option_item"
-            android:layout_width="@dimen/game_option_width"
+            android:layout_width="@dimen/app_item_width"
             android:layout_height="@dimen/game_option_height"
             android:layout_marginStart="16dp"
             app:layout_constraintStart_toEndOf="@+id/fifth"
