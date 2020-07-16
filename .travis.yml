@@ -1,5 +1,12 @@
 language: android
 
+before_script: 
+  - cd HearthStone
+  - pwd
+
+install: 
+  - ant deps
+
 jdk:
   - openjdk8
 
@@ -9,3 +16,7 @@ android:
     - android-29
     - tools
     - platform-tools
+  licenses:
+    - 'android-sdk-preview-license-52d11cd2'
+    - 'android-sdk-license-.+'
+    - 'google-gdk-license-.+'
