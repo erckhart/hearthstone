@@ -2,10 +2,12 @@ language: android
 
 before_script: 
   - cd HearthStone
-  - pwd
+  - gem install fastlane -NV
+  - fastlane test
 
-install: 
-  - ant deps
+cache: fastlane
+
+install: true
 
 jdk:
   - openjdk8
