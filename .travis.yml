@@ -1,5 +1,10 @@
 language: android
 
+before_script: cd HearthStone
+
+install: 
+  - ant deps
+
 jdk:
   - openjdk8
 
