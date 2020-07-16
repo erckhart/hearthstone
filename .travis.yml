@@ -1,7 +1,11 @@
 language: android
-dist: trusty
-install: ant deps
+
+jdk:
+  - openjdk8
+
 android:
   components:
     - build-tools-29.0.2
     - android-29
+    - tools
+    - platform-tools
